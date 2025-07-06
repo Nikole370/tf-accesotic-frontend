@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Predicción de Uso de TIC en Perú</h1>
+  <form (ngSubmit)="enviarDatos()">
+    <label>UBIGEO:
+      <input [(ngModel)]="formData.ubigeo" name="ubigeo" required />
+    </label>
+    <label>DOMINIO:
+      <input [(ngModel)]="formData.dominio" name="dominio" required />
+    </label>
+    <label>ESTRATO:
+      <input [(ngModel)]="formData.estrato" name="estrato" required />
+    </label>
+    <label>I612G - Gasto en tecnología:
+      <input type="number" [(ngModel)]="formData.gastoG" name="gastoG" />
+    </label>
+    <label>I612H - Gasto en tecnología:
+      <input type="number" [(ngModel)]="formData.gastoH" name="gastoH" />
+    </label>
+    <label>¿Usa TIC?
+      <select [(ngModel)]="formData.usoTIC" name="usoTIC" required>
+        <option value="">Seleccione</option>
+        <option value="1">Sí</option>
+        <option value="2">No</option>
+      </select>
+    </label>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div *ngIf="resultado">
+    <h3>Resultado:</h3>
+    <pre>{{ resultado | json }}</pre>
+  </div>
+</div>
